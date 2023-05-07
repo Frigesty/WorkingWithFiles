@@ -1,0 +1,16 @@
+{
+  "Brand": "Samsung",
+  "Model": "Galaxy S23 Ultra",
+  "NavigationSystem": ["GPS", "GLONASS", "Beidou", "Galileo", "QZSS"],
+  "OperatingSystem": "Android",
+  "MemoryGB": 256,
+  "CPU": {
+    "CPUFrequencyGHz": 3.36,
+    "CPUType": "8 core"
+  },
+  "Camera": {
+    "ResolutionMP": 200,
+    "Autofocus": true,
+    "Zoom": "100x"
+  }
+}
