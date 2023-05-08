@@ -2,6 +2,7 @@ package ru.frigesty;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import ru.frigesty.modal.Phone;
 
@@ -12,17 +13,17 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
+@DisplayName("JsonTests")
 public class JsonTests {
 
     private final ClassLoader cl = JsonTests.class.getClassLoader();
+    @DisplayName("Проверяем Фаил Phone.json")
     @JsonIgnoreProperties(ignoreUnknown = true)
     @Test
     void jsonTest() throws Exception {
-        try (InputStream is = cl.getResourceAsStream("Phone.json")) {
-            assert is != null;
-            try (InputStreamReader isr = new InputStreamReader(is)) {
-                Phone phone = new ObjectMapper().readValue(isr, Phone.class);
+        try (InputStream is = cl.getResourceAsStream("Phone.json");
+            InputStreamReader isr = new InputStreamReader(is)) {
+            Phone phone = new ObjectMapper().readValue(isr, Phone.class);
                 assertEquals("Samsung", phone.getBrand());
                 assertEquals("Galaxy S23 Ultra", phone.getModel());
                 List<String> expectedNavigationSystem = Arrays.asList("GPS", "GLONASS", "Beidou", "Galileo", "QZSS");
@@ -34,8 +35,7 @@ public class JsonTests {
                 assertEquals(200, phone.getCamera().getResolutionMP());
                 assertTrue(phone.getCamera().getAutofocus());
                 assertEquals("100x", phone.getCamera().getZoom());
-                }
-        }
+            }
     }
 }
 

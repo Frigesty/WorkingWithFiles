@@ -39,33 +39,4 @@ public class Phone {
     public Camera getCamera() {
         return camera;
     }
-
-    public static class Camera {
-
-        private int resolutionMP;
-        private boolean autofocus;
-        private String zoom;
-
-        public int getResolutionMP() {
-            return resolutionMP;
-        }
-        public boolean getAutofocus() {
-            return autofocus;
-        }
-        public String getZoom() {
-            return zoom;
-        }
-    }
-
-    public static class  CPU {
-        private double cpuFrequencyGHz;
-        private String cpuType;
-
-        public double getCPUFrequencyGHz() {
-            return cpuFrequencyGHz;
-        }
-        public String getCPUType() {
-            return cpuType;
-        }
-    }
 }
